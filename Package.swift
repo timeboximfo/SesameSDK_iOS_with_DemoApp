@@ -11,7 +11,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/aws-amplify/aws-sdk-ios-spm",
-            .upToNextMajor(from: "2.41.0")   // 2.41.0 以上
+            .upToNextMajor(from: "2.41.0")
         )
     ],
     targets: [
@@ -26,11 +26,13 @@ let package = Package(
                 "AESc",
                 .product(name: "AWSCore", package: "aws-sdk-ios-spm"),
                 .product(name: "AWSCognitoIdentityProvider", package: "aws-sdk-ios-spm"),
-                .product(name: "AWSAPIGateway", package: "aws-sdk-ios-spm"),   // ← これを追加
+                .product(name: "AWSAPIGateway", package: "aws-sdk-ios-spm"),
                 .product(name: "AWSIoT", package: "aws-sdk-ios-spm")
             ],
             path: "Sources/SesameSDK",
-            resources: [.process("DB/CHDeviceModel.xcdatamodeld")]
+            resources: [
+                .process("DB/CHDeviceModel.xcdatamodeld")
+            ]
         )
     ]
 )
